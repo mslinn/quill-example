@@ -5,6 +5,7 @@ import scala.reflect.macros.whitebox.{Context => MacroContext}
 class InsertOrUpdateMacro(val c: MacroContext) {
   import c.universe._
 
+  /** First try to update caseClass if it matches `filter`, otherwise try to insert */
   def insertOrUpdate[T](entity: Tree, filter: Tree)
                        (implicit t: WeakTypeTag[T]): Tree =
     q"""

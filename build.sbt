@@ -36,15 +36,11 @@ lazy val macrosModule = project.in(file("macro"))
   .settings(commonSettings: _*)
   .settings(
     libraryDependencies ++= Seq(
-      "org.scala-lang" % "scala-reflect",
-      "org.scala-lang" % "scala-compiler"
-    ).map(_  % scalaVer),
-    libraryDependencies ++= Seq(
-      "io.getquill" %% "quill-async-postgres",
-      "io.getquill" %% "quill-jdbc"
-    ).map(_ % quillVer),
-    libraryDependencies ++= Seq(
-      "org.postgresql" % "postgresql" % "9.4.1208"
+      "org.scala-lang" %  "scala-reflect"        % scalaVer,
+      "org.scala-lang" %  "scala-compiler"       % scalaVer,
+      "io.getquill"    %% "quill-async-postgres" % quillVer,
+      "io.getquill"    %% "quill-jdbc"           % quillVer,
+      "org.postgresql" %  "postgresql"           % "9.4.1208"
     )
   )
 
