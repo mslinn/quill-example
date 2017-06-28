@@ -6,7 +6,9 @@ import io.getquill.MappedEncoding
 import org.joda.time.{Duration, LocalDateTime}
 
 trait Encoders {
-  implicit val jodaLocalDateTimeEncoder = MappedEncoding[LocalDateTime, Date](_.toDate)
+  implicit val jodaLocalDateTimeEncoder: MappedEncoding[LocalDateTime, Date] =
+    MappedEncoding[LocalDateTime, Date](_.toDate)
 
-  implicit val jodaDurationEncoder = MappedEncoding[Duration, Long](_.getMillis)
+  implicit val jodaDurationEncoder: MappedEncoding[Duration, Long] =
+    MappedEncoding[Duration, Long](_.getMillis)
 }

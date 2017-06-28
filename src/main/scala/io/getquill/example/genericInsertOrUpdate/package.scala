@@ -3,7 +3,7 @@ package io.getquill.example
 import io.getquill.{PostgresJdbcContext, SnakeCase}
 
 package object genericInsertOrUpdate {
-  val ctx = new PostgresJdbcContext[SnakeCase]("jdbc.postgres") with Queries
+  val ctx = new PostgresJdbcContext[SnakeCase]("quill-cache.postgres") with Queries
 
   def example1(): Unit = {
     val inserting = Person(1, "")

@@ -3,10 +3,10 @@ package io.getquill.example.genericInsertOrUpdate
 import scala.reflect.macros.whitebox.{Context => MacroContext}
 
 class InsertOrUpdateMacro(val c: MacroContext) {
-
   import c.universe._
 
-  def insertOrUpdate[T](entity: Tree, filter: Tree)(implicit t: WeakTypeTag[T]): Tree =
+  def insertOrUpdate[T](entity: Tree, filter: Tree)
+                       (implicit t: WeakTypeTag[T]): Tree =
     q"""
       import ${c.prefix}._
       if (run(${c.prefix}.quote {

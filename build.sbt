@@ -9,7 +9,7 @@ lazy val commonSettings = Seq(
     "-target:jvm-1.8"
     , "-feature"
     , "-deprecation"
-    , "-Xfatal-warnings"
+//    , "-Xfatal-warnings"
     , "-Xmax-classfile-name", "100"
     , "-unchecked"
     , "-language:implicitConversions"
@@ -18,7 +18,7 @@ lazy val commonSettings = Seq(
     , "-language:higherKinds"
     , "-encoding", "UTF-8"
     , "-Yno-adapted-args"
-    , "-Xlint"
+//    , "-Xlint"
     , "-Ywarn-numeric-widen"
     , "-Ywarn-value-discard"
     , "-Xfuture"
@@ -30,7 +30,7 @@ lazy val commonSettings = Seq(
   )
 )
 
-val quillVer = "1.2.2-SNAPSHOT"
+val quillVer = "1.2.1"
 
 lazy val macrosModule = project.in(file("macro"))
   .settings(commonSettings: _*)
