@@ -26,7 +26,8 @@ lazy val commonSettings = Seq(
   ),
   javacOptions ++= Seq("-source", "1.8", "-target", "1.8", "-Xlint"),
   resolvers ++= Seq(
-    Resolver.sonatypeRepo("snapshots")
+    "micronautics/scala on bintray" at "http://dl.bintray.com/micronautics/scala"/*,
+    Resolver.sonatypeRepo("snapshots")*/
   )
 )
 
@@ -48,7 +49,7 @@ lazy val root = project.in(file("."))
   .settings(commonSettings: _*)
   .settings(
     libraryDependencies ++= Seq(
-      "org.postgresql" % "postgresql" % "9.4.1208"
+      "com.micronautics" %% "quill-cache" % "3.0.8"
     )
   )
   .dependsOn(macrosModule)
