@@ -1,6 +1,6 @@
 name := "quill-example"
 
-val scalaVer = "2.12.3"
+val scalaVer = "2.12.4"
 
 lazy val commonSettings = Seq(
   version := "1.0",
